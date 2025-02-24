@@ -5105,6 +5105,8 @@ void FullscreenUI::DrawPauseMenu(MainWindowType type)
 					SwitchToGameSettings();
 				}
 
+				// RTC_Hijack: nuke retro achievements
+				/*
 				if (ActiveButton(FSUI_ICONSTR(ICON_FA_TROPHY, "Achievements"), false, Achievements::HasAchievementsOrLeaderboards()))
 				{
 					// skip second menu and go straight to cheevos if there's no lbs
@@ -5113,6 +5115,7 @@ void FullscreenUI::DrawPauseMenu(MainWindowType type)
 					else
 						OpenPauseSubMenu(PauseSubMenu::Achievements);
 				}
+				*/
 
 				if (ActiveButton(FSUI_ICONSTR(ICON_FA_CAMERA, "Save Screenshot"), false))
 				{
@@ -5179,8 +5182,11 @@ void FullscreenUI::DrawPauseMenu(MainWindowType type)
 				if (ActiveButton(FSUI_ICONSTR(ICON_PF_BACKWARD, "Back To Pause Menu"), false) || WantsToCloseMenu())
 					OpenPauseSubMenu(PauseSubMenu::None);
 
+				// RTC_Hijack: nuke retro achievements
+				/*
 				if (ActiveButton(FSUI_ICONSTR(ICON_FA_TROPHY, "Achievements"), false))
 					OpenAchievementsWindow();
+				*/
 
 				if (ActiveButton(FSUI_ICONSTR(ICON_FA_STOPWATCH, "Leaderboards"), false))
 					OpenLeaderboardsWindow();
@@ -6731,7 +6737,9 @@ void FullscreenUI::DrawAchievementsSettingsPage(std::unique_lock<std::mutex>& se
 	check_challenge_state = DrawToggleSetting(bsi, FSUI_ICONSTR(ICON_FA_TROPHY, "Enable Achievements"),
 		FSUI_CSTR("When enabled and logged in, PCSX2 will scan for achievements on startup."), "Achievements", "Enabled", false);
 
-	const bool enabled = bsi->GetBoolValue("Achievements", "Enabled", false);
+	// RTC_Hijack: nuke retro achievements
+	//const bool enabled = bsi->GetBoolValue("Achievements", "Enabled", false);
+	const bool enabled = false;
 
 	check_challenge_state |= DrawToggleSetting(bsi, FSUI_ICONSTR(ICON_PF_DUMBELL, "Hardcore Mode"),
 		FSUI_CSTR(

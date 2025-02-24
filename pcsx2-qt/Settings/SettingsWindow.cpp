@@ -176,7 +176,8 @@ void SettingsWindow::setupUi(const GameList::Entry* game)
 			QStringLiteral("folder-settings-line"),
 			tr("<strong>Folder Settings</strong><hr>These options control where PCSX2 will save runtime data files."));
 	}
-
+	// RTC_Hijack: nuke retro achievements
+	/*
 	{
 		QString title = tr("Achievements");
 		QString icon_text(QStringLiteral("trophy-line"));
@@ -196,7 +197,7 @@ void SettingsWindow::setupUi(const GameList::Entry* game)
 				std::move(icon_text), std::move(help_text));
 		}
 	}
-
+	*/
 	if (show_advanced_settings)
 	{
 		addWidget(m_advanced_settings = new AdvancedSettingsWidget(this, m_ui.settingsContainer), tr("Advanced"),

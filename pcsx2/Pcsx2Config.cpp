@@ -1642,7 +1642,6 @@ Pcsx2Config::AchievementsOptions::AchievementsOptions()
 void Pcsx2Config::AchievementsOptions::LoadSave(SettingsWrapper& wrap)
 {
 	SettingsWrapSection("Achievements");
-
 	SettingsWrapBitBool(Enabled);
 	SettingsWrapBitBoolEx(HardcoreMode, "ChallengeMode");
 	SettingsWrapBitBool(EncoreMode);

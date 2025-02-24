@@ -466,14 +466,6 @@
     <string>&amp;Graphics</string>
    </property>
   </action>
-  <action name="actionAchievementSettings">
-   <property name="icon">
-    <iconset theme="trophy-line"/>
-   </property>
-   <property name="text">
-    <string>A&amp;chievements</string>
-   </property>
-  </action>
   <action name="actionPostProcessingSettings">
    <property name="text">
     <string>&amp;Post-Processing Settings...</string>
