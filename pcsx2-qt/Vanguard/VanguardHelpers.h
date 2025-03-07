@@ -39,6 +39,7 @@ class VanguardClient
 {
 public:
   static bool loading;
+  static bool savestate_loading;
   static bool ok_to_corestep;
   static bool corestep_every_other;
   inline static bool pauseUntilCorrupt;

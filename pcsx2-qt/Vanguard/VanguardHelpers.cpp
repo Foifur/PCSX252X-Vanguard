@@ -152,12 +152,15 @@ void Vanguard_savesavestate(BSTR filename, bool wait)
     }
 }
 
-
+bool VanguardClient::savestate_loading = false;
 void Vanguard_loadsavestate(BSTR filename)
 {
   // Convert the BSTR sent by Vanguard to std::string
   std::string filename_converted = BSTRToString(filename);
+  VanguardClient::savestate_loading = true;
   g_emu_thread->EmuThread::loadState(QString::fromStdString(filename_converted));
+  while (VanguardClient::savestate_loading)
+	  Sleep(20);
 }
 
 

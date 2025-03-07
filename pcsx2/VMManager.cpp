@@ -1811,6 +1811,9 @@ bool VMManager::DoLoadState(const char* filename)
 		return false;
 	}
 
+	// RTC_Hijack: Need to wait until now to ensure memory has been loaded
+	VanguardClient::savestate_loading = false;
+
 	Host::OnSaveStateLoaded(filename, true);
 	if (g_InputRecording.isActive())
 	{
