@@ -2773,8 +2773,13 @@ void VMManager::Internal::VSyncOnCPUThread()
 {
 	Pad::UpdateMacroButtons();
 
+	// RTC_Hijack: Situational code where some emulators seem to call the frame twice
+	#ifdef VANGUARD_SKIP_EVERY_OTHER_CORESTEP
+	VanguardClient::corestep_every_other = !VanguardClient::corestep_every_other;
+	#endif
+
 	// RTC_Hijack: call Vanguard function
-	if (VanguardClient::ok_to_corestep)
+	if (VanguardClient::ok_to_corestep && VanguardClient::corestep_every_other)
 	{
 		CallImportedFunction<void>((char*)"CORESTEP");
 	}

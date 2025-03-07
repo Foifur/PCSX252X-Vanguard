@@ -4,6 +4,7 @@
 #include <locale>
 #include <codecvt>
 
+#define VANGUARD_SKIP_EVERY_OTHER_CORESTEP
 #define EXPORT extern "C" __declspec(dllexport)
 
 EXPORT unsigned char Vanguard_peekbyte(long long addr, int selection);
@@ -39,6 +40,7 @@ class VanguardClient
 public:
   static bool loading;
   static bool ok_to_corestep;
+  static bool corestep_every_other;
   inline static bool pauseUntilCorrupt;
   static std::string system_core;
 };

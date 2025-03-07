@@ -14,6 +14,8 @@
 
 void FormatJsonData(VanguardSettings& settings, std::ostringstream& json_string);
 
+bool VanguardClient::corestep_every_other = true;
+
 unsigned char Vanguard_peekbyte(long long addr, int selection)
 {
 	u8 byte = 0;
@@ -126,6 +128,7 @@ void Vanguard_pause(bool pauseUntilCorrupt)
 	if (VMManager::HasValidVM())
 	{
 		VMManager::SetState(VMState::Paused);
+		VanguardClient::ok_to_corestep = false;
 	}
 }
 
