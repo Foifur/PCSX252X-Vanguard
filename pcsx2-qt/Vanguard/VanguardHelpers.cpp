@@ -2,6 +2,7 @@
 #include "pcsx2-qt/Vanguard/VanguardClientInitializer.h"
 #include "pcsx2-qt/Vanguard/VanguardJsonParser.h"
 #include "pcsx2-qt/Vanguard/VanguardEmuSettings.h"
+
 #include <cstddef>
 #include <Memory.h>
 #include <Cache.h>
@@ -158,9 +159,12 @@ void Vanguard_loadsavestate(BSTR filename)
   // Convert the BSTR sent by Vanguard to std::string
   std::string filename_converted = BSTRToString(filename);
   VanguardClient::savestate_loading = true;
-  g_emu_thread->EmuThread::loadState(QString::fromStdString(filename_converted));
+  g_emu_thread->loadState(QString::fromStdString(filename_converted));
+
   while (VanguardClient::savestate_loading)
+  {
 	  Sleep(20);
+  }
 }
 
 

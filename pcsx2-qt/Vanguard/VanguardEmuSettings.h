@@ -76,7 +76,7 @@ public:
 
 	  load_setting<char*>("EmuCore/GS", "FMVAspectRatioSwitch", (*settings.json)[VAR_NAME(FMVAspectRatioSwitch)], Pcsx2Config::GSOptions::FMVAspectRatioSwitchNames);
 
-	  VMManager::ApplySettings();
+	  Host::RunOnCPUThread([]() { VMManager::ApplySettings(); });
   }
 
   // Visits the variant value in a pair, determines the correct data type and returns it as a string
