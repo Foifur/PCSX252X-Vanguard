@@ -56,7 +56,7 @@ unsigned char Vanguard_peekbyte(long long addr, int selection)
 		case 4:
 			mod = addr % 2;
 			newAddr = addr - mod;
-			data = SPU2read(newAddr);
+			data = spu2M_Read(newAddr);
 			if (mod < 1)
 			{
 				byte = data & 0xFF;
@@ -92,7 +92,7 @@ void Vanguard_pokebyte(long long addr, unsigned char val, int selection)
 		case 3:
 			if ((addr % 2) == 0)
 			{
-				value = (val << 8) | (Vanguard_peekbyte(addr + 1, 1));
+				value = (val << 8) | (Vanguard_peekbyte(addr + 1, 3));
 			}
 			else
 			{
@@ -105,14 +105,14 @@ void Vanguard_pokebyte(long long addr, unsigned char val, int selection)
 		case 4:
 			if ((addr % 2) == 0)
 			{
-				value = (val << 8) | (Vanguard_peekbyte(addr + 1, 1));
+				value = (val << 8) | (Vanguard_peekbyte(addr + 1, 4));
 			}
 			else
 			{
 				addr -= 1;
 				value = (Vanguard_peekbyte(addr, 1) << 8) | val;
 			}
-			SPU2write(addr, value);
+			spu2M_Write(addr, value);
 			break;
 		default:
 			break;
