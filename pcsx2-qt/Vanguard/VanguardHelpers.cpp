@@ -178,8 +178,10 @@ void Vanguard_loadROM(BSTR filename)
 	VanguardClientInitializer::win->MainWindow::doStartFile(std::nullopt, QString::fromStdString(converted_filename));
   else
   {
-	VanguardClientInitializer::win->MainWindow::requestShutdown(false, false, false);
-	VanguardClientInitializer::win->MainWindow::doStartFile(std::nullopt, QString::fromStdString(converted_filename));
+	  VanguardClientInitializer::win->MainWindow::requestShutdown(false, false, false);
+	  while (VMManager::GetState() != VMState::Shutdown)
+		  Sleep(100);
+	  VanguardClientInitializer::win->MainWindow::doStartFile(std::nullopt, QString::fromStdString(converted_filename));
   }
 
 

@@ -1229,11 +1229,12 @@ bool MainWindow::requestShutdown(bool allow_confirm, bool allow_save_to_state, b
 		updateDisplayRelatedActions(false, false, false);
 	}
 
+	// Now we can actually shut down the VM.
+	g_emu_thread->shutdownVM(save_state);
+
 	// RTC_Hijack: call Vanguard function
 	CallImportedFunction<void>((char*)"GAMECLOSED");
 
-	// Now we can actually shut down the VM.
-	g_emu_thread->shutdownVM(save_state);
 	return true;
 }
 
