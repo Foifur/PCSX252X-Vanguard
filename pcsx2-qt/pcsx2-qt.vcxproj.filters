@@ -689,7 +689,8 @@
     <None Include="Settings\ControllerMappingSettingsDialog.ui">
       <Filter>Settings</Filter>
     </None>
-    <None Include="Vanguard\VanguardSpec.json" />
+    <None Include="Vanguard\VanguardConfig.json" />
+    <None Include="Vanguard\VanguardBlacklistedDomains.json" />
   </ItemGroup>
   <ItemGroup>
     <QtTs Include="Translations\pcsx2-qt_en.ts">

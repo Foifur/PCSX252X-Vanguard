@@ -1,0 +1,199 @@
+{
+  "VSpecConfig": {
+    "EmuEXE": "pcsx2-qtx64.exe",
+    "NAME": "PCSX2",
+    "PROFILE": "PCSX2",
+    "OVERRIDE_DEFAULTMAXINTENSITY": 500000,
+    "SUPPORTS_RENDERING": false,
+    "SUPPORTS_CONFIG_MANAGEMENT": true,
+    "SUPPORTS_CONFIG_HANDOFF": true,
+    "SUPPORTS_KILLSWITCH": true,
+    "SUPPORTS_REALTIME": true,
+    "SUPPORTS_SAVESTATES": true,
+    "SUPPORTS_REFERENCES": true,
+    "CORE_DISKBASED": true,
+    "RELOAD_ON_SYNCSETTINGS":  false
+  },
+  "MemoryDomainConfig": [
+    {
+      "Name": "EERAM",
+      "Profiles": [
+        "PCSX2"
+      ],
+      "RequiresReload":  false,
+      "BigEndian": false,
+      "Size": "0x01F00000",
+      "WordSize": 4,
+      "Offset": "0x00000000",
+      "PeekPokeSel": 0
+    },
+    {
+      "Name": "Scratchpad",
+      "Profiles": [
+        "PCSX2"
+      ],
+      "RequiresReload": false,
+      "BigEndian": false,
+      "Size": "0x00004000",
+      "WordSize": 4,
+      "Offset": "0x70000000",
+      "PeekPokeSel": 0
+    },
+    {
+      "Name": "Kernel Segment 0",
+      "Profiles": [
+        "PPCSX2S2"
+      ],
+      "RequiresReload": false,
+      "BigEndian": false,
+      "Size": "0x20000000",
+      "WordSize": 4,
+      "Offset": "0x80000000",
+      "PeekPokeSel": 0
+    },
+    {
+      "Name": "Kernel Segment 1",
+      "Profiles": [
+        "PCSX2"
+      ],
+      "RequiresReload": false,
+      "BigEndian": false,
+      "Size": "0x20000000",
+      "WordSize": 4,
+      "Offset": "0xA0000000",
+      "PeekPokeSel": 0
+    },
+    {
+      "Name": "Supervisor Segment",
+      "Profiles": [
+        "PCSX2"
+      ],
+      "RequiresReload": false,
+      "BigEndian": false,
+      "Size": "0x20000000",
+      "WordSize": 4,
+      "Offset": "0xC0000000",
+      "PeekPokeSel": 0
+    },
+    {
+      "Name": "Kernel Segment 3",
+      "Profiles": [
+        "PCSX2"
+      ],
+      "RequiresReload": false,
+      "BigEndian": false,
+      "Size": "0x20000000",
+      "WordSize": 4,
+      "Offset": "0xE0000000",
+      "PeekPokeSel": 0
+    },
+    {
+      "Name": "IO Registers",
+      "Profiles": [
+        "PCSX2"
+      ],
+      "RequiresReload": false,
+      "BigEndian": false,
+      "Size": "0x00010000",
+      "WordSize": 4,
+      "Offset": "0x10000000",
+      "PeekPokeSel": 0
+    },
+    {
+      "Name": "VU0 Code",
+      "Profiles": [
+        "PCSX2"
+      ],
+      "RequiresReload": false,
+      "BigEndian": false,
+      "Size": "0x00001000",
+      "WordSize": 4,
+      "Offset": "0x11000000",
+      "PeekPokeSel": 0
+    },
+    {
+      "Name": "VU0 Data",
+      "Profiles": [
+        "PCSX2"
+      ],
+      "RequiresReload": false,
+      "BigEndian": false,
+      "Size": "0x00001000",
+      "WordSize": 4,
+      "Offset": "0x11004000",
+      "PeekPokeSel": 0
+    },
+    {
+      "Name": "VU1 Code",
+      "Profiles": [
+        "PCSX2"
+      ],
+      "RequiresReload": false,
+      "BigEndian": false,
+      "Size": "0x00004000",
+      "WordSize": 4,
+      "Offset": "0x11008000",
+      "PeekPokeSel": 0
+    },
+    {
+      "Name": "VU1 Data",
+      "Profiles": [
+        "PCSX2"
+      ],
+      "RequiresReload": false,
+      "BigEndian": false,
+      "Size": "0x00004000",
+      "WordSize": 4,
+      "Offset": "0x1100C000",
+      "PeekPokeSel": 0
+    },
+    {
+      "Name": "GS Registers",
+      "Profiles": [
+        "PCSX2"
+      ],
+      "RequiresReload": false,
+      "BigEndian": false,
+      "Size": "0x00002000",
+      "WordSize": 4,
+      "Offset": "0x12000000",
+      "PeekPokeSel": 1
+    },
+    {
+      "Name": "IOP RAM",
+      "Profiles": [
+        "PCSX2"
+      ],
+      "RequiresReload": false,
+      "BigEndian": false,
+      "Size": "0x00200000",
+      "WordSize": 4,
+      "Offset": "0x00000000",
+      "PeekPokeSel": 2
+    },
+    {
+      "Name": "SPU2 Registers",
+      "Profiles": [
+        "PCSX2"
+      ],
+      "RequiresReload": false,
+      "BigEndian": false,
+      "Size": "0x00000800",
+      "WordSize": 2,
+      "Offset": "0x1F900000",
+      "PeekPokeSel": 3
+    },
+    {
+      "Name": "SPU2 RAM",
+      "Profiles": [
+        "PCSX2"
+      ],
+      "RequiresReload": false,
+      "BigEndian": false,
+      "Size": "0x00200000",
+      "WordSize": 2,
+      "Offset": "0x00000000",
+      "PeekPokeSel": 4
+    }
+  ]
+}

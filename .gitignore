@@ -92,6 +92,7 @@ oprofile_data/
 /bin/videos
 /bin/portable.ini
 /bin/portable.txt
+/bin/*.json
 
 # Manually added by user.
 /bin/resources/patches.zip
